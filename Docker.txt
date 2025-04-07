@@ -49,15 +49,19 @@ All the above problems are solved by kubernetes
 Kubernetes has controlplane and data plane
 
 Control plane containes:
-API server
-Controller manager
-Scheduler
-etcd
+API server: Core component of the kubernetes cluster, it exposes the cluster to the external world
+Controller manager: it ensures all the controllers are running.
+Scheduler: Scheduling your pods or resources on the node
+etcd: key value store, entire kubernetes cluster information is stored in etcd
 
 Data plane contains:
-Kube proxy
-Kubelet
-Container-d
+Kube proxy   ----> provides networking to the pods
+Kubelet      -----> It is responsible for creation of the pod it ensures Pod is running if Pod is not running it will inform to the API server
+Container-d  -----> To run any POD or container container run time is required. Container-d provides the run time.
+
+Cloud controller manager: It helps you to run the Kubernetes on the cloud platform (EKS)
+
+
 
 
 
