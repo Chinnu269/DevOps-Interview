@@ -46,6 +46,20 @@ Enterprise support
 
 All the above problems are solved by kubernetes
 
+Kubernetes has controlplane and data plane
+
+Control plane containes:
+API server
+Controller manager
+Scheduler
+etcd
+
+Data plane contains:
+Kube proxy
+Kubelet
+Container-d
+
+
 
 
 
