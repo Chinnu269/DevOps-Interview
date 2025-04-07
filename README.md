@@ -1,5 +1,5 @@
 # DevOps-Interview
-<< COMMENT
+>> COMMENT
 
 -->The difference between `git pull` and `git fetch` lies in what they do with the remote changes.
 ----------------------------------------------------------------------------------------------------------------------
