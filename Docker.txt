@@ -1,0 +1,57 @@
+1) Docker:  It is a light weight software package which includes Binary,library,Runtime all the packages which are required to run an application.
+2) Container won't be avaiable if there is no task is running on the container. It is a process and it is a tiny part of the compute/memory hence it won't be avaible if there is no task is running on it.
+3) Docker will work on the concept of Operating system level virtulization.
+
+Commands:
+------------------
+
+1) yum install docker*                                     ---->             To Install the docker
+2) docker images                                               ---->             To list the Images which are stored on  your local machine/system
+3) docker ps                                                        ---->              To list all the running docker containers
+4) docker ps -a                                                  ---->                To list all the containers(running+Exited)
+5) docker run  --name myos registry.access.redhat.com/ubi7           ------> To download the Image from the docker registry to your local machine and creates the container      
+6) docker run -d --name myos2 registry.access.redhat.com/ubi7    ------->  It wil create the container but in the background the terminal won't get freezed
+  ( -d stands for detached )
+7) docker inspect                                     ------>   It helps you get the more information about the docker, returning a JSON object containing configuration details and metadata. 
+8) docker run -d --name myweb2 registry.access.redhat.com/ubi9/httpd-24:latest   ------> create the container and install the httpd(webserver) appliction on it.
+9) docker start myweb2 ----> To start container which is stopped
+10) docker stop myweb2   ----> To stop the container
+11) docker exec -it myweb2 bash     -----> To enter inside the contianer
+12) docker rm myweb2  --->   To remove the container completely, this will termiate the container permanently
+13) docker run -d --name myweb3 -p 8090:8080 registry.access.redhat.com/ubi9/httpd-24     ---->  (Port Mapping) To access the application through your host on which your container is running.
+( In the above command 8090 is host port and 8080 is container port, when the request hits the port 8090 it route the request to port 8080 which is container port and it provides the data)
+14) docker run -d --name myweb7 -p 8092:8080 -v /root/webcontent:/var/www:Z registry.access.redhat.com/ubi9/httpd-24  ----->  (Volume Mapping) Even if you terminate the container and create it again with the same name the application will run and it will exist
+15) docker logs mydb2  ----> To validate the logs
+
+Stateful container: A stateful container is one that maintains and manages persistent data throughout its lifecycle, unlike stateless containers which are designed to be temporary and don't retain data across restarts. 
+
+16) docker run -d -p 3307:3306 --name mydb3 -e MYSQL_ROOT_PASSWORD=murali registry.access.redhat.com/rhscl/mariadb-101-rhel7
+
+When your trying to create a statful container to host a database application you need to pass the variable hence mentioned -e in the command.
+
+Image Management:
+-------------------------
+
+docker build -t myfirstimg:1.0 .
+docker run -d --name myownweb -p 8096:80 localhost/myfirstimg:1.0 
+
+Kubernetes:
+-------------------------
+Issues with Docker
+
+Auto Healing
+Auto Scaling
+Standalone server
+Enterprise support
+
+All the above problems are solved by kubernetes
+
+
+
+
+
+
+
+
+
+
